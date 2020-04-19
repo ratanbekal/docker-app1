@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "labk8scluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "labk8scluster"
+    spec:
+      containers:
+        - name: "labk8scluster"
+          image: "newcontainerreg1.azurecr.io/labk8scluster"
+          ports:
+          - containerPort: 8080
